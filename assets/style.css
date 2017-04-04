@@ -1,6 +1,6 @@
 body, html {
   color: #000 !important;
-  font-family: 'Open Sans', sans-serif !important;
+  font-family: 'Open Sans', sans-serif;
   font-size: 12px !important;
   margin: 0px;
   padding: 0px;
@@ -32,7 +32,7 @@ a:hover, a:focus {
   border: 1px solid #111;
   border-radius: 5px;
   padding: 5px;
-  width: 250px;
+  width: 230px;
   opacity: 0.5;
 }
 
@@ -83,7 +83,7 @@ a:hover, a:focus {
 #style_green {
   background-color: #006303;
   padding-top: 17px;
-  width: 50px;
+  width: 52px;
   height: 50px;
   display: inline-block;
   border-radius: 5px;
@@ -125,6 +125,10 @@ a:hover, a:focus {
 
 .nav-container-fluid {
   background: transparent;
+}
+
+.navbar-default .navbar-nav>li {
+  font-weight: 600px !important;
 }
 
 .navbar-default .navbar-nav>li>a {
@@ -216,7 +220,7 @@ a:focus {
 }
 
 .overlay-content {
-  padding-top: 150px;
+  padding-top: 140px;
   padding-left: 10%;
   width: 100%;
   height: 100%;
@@ -272,7 +276,7 @@ a:focus {
 
 .scroll {
   text-align: center;
-  padding: 30px 0 30px 0;
+  padding: 0px 0 10px 0;
 }
 
 #scroll-icon {
@@ -778,7 +782,7 @@ a:focus {
 /* footer */
 .footer {
   background-color: #111;
-  margin-top: 30px;
+  margin-top: 0;
   color: #777;
   padding-left: 0px !important;
   padding-right: 0px !important;
@@ -990,7 +994,7 @@ span.pwd {
   bottom: 0;
   width: 45px;
   height: 45px;
-  background-color: #9a9999;
+  background-color: #9a9999 !important;
   opacity: 0.7;
   box-shadow: -2px -2px 5px 0px #e2e2e2;
 }
@@ -1007,12 +1011,12 @@ span.pwd {
 }
 
 #scroll_to_top + .tooltip > .tooltip-inner {
-  background-color: #9a9999;
+  background-color: #9a9999 !important;
   opacity: 0.9;
 }
 
 #scroll_to_top + .tooltip.left > .tooltip-arrow {
-  border-left: 5px solid #9a9999;
+  border-left: 5px solid #9a9999 !important;
   opacity: 0.9;
 }
 
@@ -1022,3 +1026,12 @@ span.pwd {
   }
 }
 /* End Scroll to top button */
+
+.help-block {
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+}
+
+.form-group {
+  margin-bottom: 0px !important; 
+}

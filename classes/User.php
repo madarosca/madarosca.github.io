@@ -9,11 +9,7 @@ class User
 		foreach ($rows as $key => $row) {
 			$this->$key = $row;
 		}
-
-		print_r($this);
-		//die();
 	}
-
 
 	public static function make($row)
 	{
@@ -29,7 +25,6 @@ class User
 		return $row;
 
 	}
-
 
 	public function updateData($columns, $conditions)
 	{

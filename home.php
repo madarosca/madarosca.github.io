@@ -20,17 +20,20 @@ if (!isset($_SESSION['username'])) {
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
     <!-- Styles -->
-    <link href="assets/style.css" type="text/css" rel="stylesheet">
+    <link href="assets/admin_style.css" type="text/css" rel="stylesheet">
     <link href="assets/buttons.css" type="text/css" rel="stylesheet">
     <!-- Bootstrap -->
     <link href="assets/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <!-- Font awesome -->
     <link href="assets/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
     <div class="register-container main-wrapper">
-        <!-- navbar -->
-        <nav class="navbar navbar-default" role="navigation" id="top">
+        <!-- Top navbar -->
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
           <div class="nav-container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -40,68 +43,74 @@ if (!isset($_SESSION['username'])) {
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="index.php"><img src="img/logo.gif" id="logo"></img></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
-              <ul class="nav navbar-nav navbar-right">
+              <ul class="nav navbar-nav">
                 <li><a href="#">Menu 1</a></li>
                 <li><a href="#">Menu 2</a></li>
                 <li><a href="#">Menu 3</a></li>
+                <li><a href="#">Menu 4</a></li>
                 <?php if (isset($_SESSION['username'])) { ?>
-                <li><a href="logout.php" id="logout" name="logout">LOG OUT</A></li><?php } ?>
+                <li><a href="logout.php" id="logout" name="logout">LOG OUT</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Profile<span class="caret"></span></a>
+                  <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                  </ul>
+                </li>
+                <?php }
+                else { ?>
+                <li><a href="login.php" id="login" name="login">LOGIN</a></li><?php } ?>
+                
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.nav-container-fluid -->
         </nav><!-- end navbar -->
-    <?php if (isset($_SESSION['username'])) { ?>
-	<div><h1>Hello <?php echo $_SESSION['username'];?></h1></div><?php } ?>
-	<!-- error message -->
-	<?php if(isset($emsg)){ ?><div class="alert alert-danger alert-dismissable container-fluid col-lg-8 col-lg-offset-2 col-md-12 col-sm-12 col-xs-12" role="alert" style="margin-top: 50px;"><b><?php echo $emsg; ?></b>
-	    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-	</div><?php } ?><!-- end /error message -->
-
-	<div>
-	<?php 
-	require_once(__DIR__ . "/classes/User.php");
-	$users = User::getUsers();
-	//echo ("<pre>"); print_r($users); echo ("</pre>");
-	$html = "<ul>";
-	foreach ($users as $user) {
-		$html .= "<li>". $user->username . "</li>";
-	}
-	$html .= "</ul>";
-	//echo $html; 
-
-	$params = array(
-		'id' => '40'
-	);
-	$user = User::getUserByAttribute($params);
-	//print_r($user);
-	//die();
-	print_r($user->username . ', ' . $user->email);
-	$columns = array(
-		'username' => '345678iuhgfds',
-		'email' => 'mnienie@test.com'
-	);
-
-	$conditions = array(
-		'id' => '40'
-	);
-	
-	$user->updateData($columns, $conditions);
-	$user = User::getUserByAttribute($params);
-	print_r($user->username . ', ' . $user->email);
-
-	?>
-
-	</div>
-
-
+    <div id="wrapper" class="active">
+      <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+        <ul id="sidebar_menu" class="sidebar-nav active">
+            <li class="sidebar-brand">
+              <a href="index.php" id="logo"><img id="logo" src="img/logo_white.png">
+              </a>
+            </li>
+            <li class="sidebar-brand">
+              <a id="menu-toggle">Menu
+                <span id="main_icon" class="glyphicon glyphicon-chevron-left"></span>
+              </a>
+            </li>
+        </ul>
+        <ul class="sidebar-nav" id="sidebar" role="navigation">     
+          <li><a class="active" href="#">Link1<span class="sub_icon glyphicon glyphicon-file"></span></a></li>
+          <li><a href="#">link2<span class="sub_icon glyphicon glyphicon-signal"></span></a></li>
+          <li><a href="#">Link3<span class="sub_icon glyphicon glyphicon-file"></span></a></li>
+          <li><a href="#">link4<span class="sub_icon glyphicon glyphicon-signal"></span></a></li>
+          <li><a href="#">Link5<span class="sub_icon glyphicon glyphicon-file"></span></a></li>
+          <li><a href="#">link6<span class="sub_icon glyphicon glyphicon-signal"></span></a></li>
+        </ul>
+      </div>
+      <!-- Page content -->
+      <div class="page-content-wrapper col-md-12">
+        <!-- Keep all page content within the page-content inset div! -->
+        <div class="page-content inset">
+            <div class="row">
+                <div class="col-md-12">
+                     <?php if (isset($_SESSION['username'])) { ?>
+                    <div><h1>Hello <?php echo $_SESSION['username'];?></h1></div><?php } ?>
+                    <!-- error message -->
+                    <?php if(isset($emsg)){ ?><div class="alert alert-danger alert-dismissable container-fluid col-lg-8 col-lg-offset-2 col-md-12 col-sm-12 col-xs-12" role="alert" style="margin-top: 50px;"><b><?php echo $emsg; ?></b>
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    </div><?php } ?><!-- end /error message -->
+                </div>
+            </div>
+        </div>
+      </div>
+</div>
 </body>
-<!-- jQuery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="js/default.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>

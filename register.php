@@ -47,6 +47,9 @@ if(isset($_POST['submit']) && !empty($_POST)) {
     <link href="assets/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <!-- Font awesome -->
     <link href="assets/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
     <div class="register-container main-wrapper">
@@ -66,9 +69,12 @@ if(isset($_POST['submit']) && !empty($_POST)) {
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Menu 1</a></li>
-                <li><a href="#">Menu 2</a></li>
-                <li><a href="#">Menu 3</a></li>
+                <li><a href="http://tratamentnaturist.epizy.com" target="_blank">Demo website 1</a></li>
+                <li><a href="http://mydemo2.epizy.com" target="_blank">Demo website 2</a></li>
+                <li><a href="http://mydemo1.epizy.com" target="_blank">Demo website 3</a></li>
+                <li><a href="http://admin-panel.epizy.com" target="_blank">Demo Admin</a></li>
+                <li><a href="http://tickets-demo.epizy.com" target="_blank">Demo Tickets</a></li>
+                <li><a href="http://email-demo.epizy.com" target="_blank">Demo E-mail</a></li>
                 <li><a href="login.php">LOG IN</A></li>
               </ul>
             </div><!-- /.navbar-collapse -->
@@ -118,9 +124,6 @@ if(isset($_POST['submit']) && !empty($_POST)) {
         </div>
     </div><!-- end main-wrapper -->
 </body>
-<!-- jQuery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="js/default.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
-        <title>Demo website</title>
+        <title>DEMO WEBSITE</title>
         <link rel="shortcut icon" href="favicon.ico">
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,6 +17,9 @@
         <link href="assets/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
         <!-- Font awesome -->
         <link href="assets/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+        <!-- jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="assets/bootstrap/js/bootstrap.min.js"></script>
     </head>
 <body>
     <div class="main-wrapper">
@@ -36,9 +39,12 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Menu 1</a></li>
-                <li><a href="#">Menu 2</a></li>
-                <li><a href="#">Menu 3</a></li>
+                <li><a href="http://tratamentnaturist.epizy.com" target="_blank">Demo website 1</a></li>
+                <li><a href="http://mydemo2.epizy.com" target="_blank">Demo website 2</a></li>
+                <li><a href="http://mydemo1.epizy.com" target="_blank">Demo website 3</a></li>
+                <li><a href="http://admin-panel.epizy.com" target="_blank">Demo Admin</a></li>
+                <li><a href="http://tickets-demo.epizy.com" target="_blank">Demo Tickets</a></li>
+                <li><a href="http://email-demo.epizy.com" target="_blank">Demo E-mail</a></li>
                 <li><a onclick="document.getElementById('id01').style.display='block'" href="#">LOG IN</A></li>
               </ul>
             </div><!-- /.navbar-collapse -->
@@ -99,50 +105,14 @@
             </div>
         </form>
         </div><!-- end Login modal -->
-        
-        <!-- Open Register Modal -->
-        <!-- <div id="id02" class="modal">
-          <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">Close</span>
-        <!-- Modal Content -->
-        <!-- <form class="modal-content animate" action="register.php" method="POST" id="register" role="form" data-toggle="validator">
-            <div class="img_container col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <h4>Create a new account</h4>
-              <img src="img/img_avatar2.png" alt="Avatar" class="avatar">
-            </div>
-            <div class="container-fluid col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
-              <div class="form-group">
-                <label><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="username" id="username" class="form-control" data-validation="length alphanumeric" data-minlength="5" required>
-              </div>
-              <div class="form-group">
-                <label><b>E-mail</b></label>
-                <input type="email" placeholder="Enter e-mail" name="email" id="email" class="form-control" required>
-                <div class="help-block with-errors"></div>
-              </div>
-              <div class="form-group">
-                <label><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="password" id="password" class="form-control" data-minlength="5" required>
-                <div class="help-block">Minimum of 6 characters</div>
-              </div>
-              <div class="form-group">
-                <label><b>Confirm password</b></label>
-                <input type="password" placeholder="Confirm Password" name="confirm_pwd" id="confirm_pwd" class="form-control" data-match="#password" data-match-error="Whoops, these don't match" required>
-                <div class="help-block with-errors"></div>
-              </div>
-              <div class="form-group">
-                <button type="submit" class="login_btn btn btn-success gradient pull-right" name="submit" id="submit" value="submit">Submit</button>
-                <button type="reset" value="reset" class="login_btn btn btn-warning gradient">Reset</button>
-                <button type="button" class="cancel_btn btn btn-danger gradient" onclick="document.getElementById('id02').style.display='none'">Cancel</button>
-              </div>
-            </div>
-          </form>
-        </div> --><!-- end Register modal -->
-        
         <div class="bg-overlay"><!-- start bg-overlay -->
             <div class="overlay-content animation-element slide-left introduction">
                     <h1 class="h-large">Created<br>for creatives</h1>
-                    <h4 class="h-subheading">Multipage & onepage HTML5 templates</h4>
-                    <a href="#" class="btn btn-overlay">Learn more</a>
+                    <h4 class="h-subheading">Multipage & one-page HTML5 websites
+	                    <br>
+	                    Website development portofolio
+                    </h4>
+                    <a href="http://tratamentnaturist.epizy.com" target="_blank" class="btn btn-overlay">See more >></a>
             </div>
             <div class="scroll">
                 <a href="#intro">
@@ -155,8 +125,11 @@
         <div class="clearfix"></div>
         <div class="spacing-1"></div>
         <div id="intro" class="col-md-offset-2 col-md-8 text-center">
-            <h3 class="b-title">WELCOME TO DEMO WEBSITE 3!</h3>
-            <h4 class="g-txt">CREATIVE MULTIPURPOSE ONE/MULTI PAGE TEMPLATE</h4>
+            <h3 class="b-title">WELCOME TO DEMO WEBSITE!</h3>
+            <h4 class="g-txt">CREATIVE MULTIPURPOSE ONE/MULTI PAGE WEBSITES
+	            <br>
+	            Website development portofolio
+            </h4>
             <br>
             <p class="g-txt-par">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
         </div>
@@ -311,9 +284,6 @@
         <div id="scroll_to_top" data-toggle="tooltip" data-placement="left" title="Scroll to top"><a href="#top"><i class="fa fa-angle-double-up"></i></a></div><!-- scroll to top button -->
     </div><!-- end main-wrapper -->
 </body>
-<!-- jQuery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="js/default.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>

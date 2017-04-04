@@ -1,7 +1,7 @@
 //script to open styles options
 $(document).ready(function (e) {
-    $("#change_theme").click(
-      function() {
+    $("#change_theme").click(function(evt) {
+          evt.preventDefault();
           $("#color_themes").slideToggle(400);
           $("#change_icon").toggleClass("glyphicon-arrow-down glyphicon-arrow-up");
     });
@@ -9,17 +9,21 @@ $(document).ready(function (e) {
 //end script to open styles options
 
 //script to dinamically change the style
-$(document).ready(function () {
-    $("#style_grey").click(function () {
+$(document).ready(function() {
+    $("#style_grey").click(function(evt) {
+        evt.preventDefault();
         $('head').append('<link rel="stylesheet" href="assets/style.css" type="text/css" />');
     });
-    $("#style_blue").click(function () {
+    $("#style_blue").click(function(evt) {
+        evt.preventDefault();
         $('head').append('<link rel="stylesheet" href="assets/style_blue.css" type="text/css" />');
     });
-    $("#style_green").click(function () {
+    $("#style_green").click(function(evt) {
+        evt.preventDefault();
         $('head').append('<link rel="stylesheet" href="assets/style_green.css" type="text/css" />');
     });
-    $("#style_red").click(function () {
+    $("#style_red").click(function(evt) {
+        evt.preventDefault();
         $('head').append('<link rel="stylesheet" href="assets/style_red.css" type="text/css" />');
     });
 });
@@ -36,6 +40,14 @@ $(document).ready(function(){
     });
 });
 //end script for the arrow down
+
+//scroll down effect
+$("a[href='#intro']").click(function(evt) {
+  evt.preventDefault();
+  $("html, body").animate({ scrollTop: 520 }, "slow");
+  return false;
+});
+//end scroll down effect
 
 //window animation on scroll
 var $animation_elements = $('.animation-element');
@@ -83,6 +95,12 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+var modal = document.getElementById('id02');
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 //end modal hide on click
 
 //show/hide scroll to top button
@@ -98,8 +116,20 @@ $(window).bind('scroll', function(){
 //end show/hide scroll to top button
 
 //scroll to top effect
-$("a[href='#top']").click(function() {
+$("a[href='#top']").click(function(evt) {
+  evt.preventDefault();
   $("html, body").animate({ scrollTop: 0 }, "slow");
   return false;
 });
 //end scroll to top effect
+$(document).ready(function(){
+    $('#scroll_to_top').tooltip({animation: true}); 
+});
+
+//sidebar in admin area
+$("#menu-toggle").click(function(evt) {
+    evt.preventDefault();
+    $("#wrapper").toggleClass("active");
+    $("#main_icon").toggleClass("glyphicon-chevron-right glyphicon-chevron-left");
+});
+//end sidebar in admin area
