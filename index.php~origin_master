@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>DEMO WEBSITE</title>
+        <link rel="shortcut icon" href="favicon.ico">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="description" content="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit">
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+        <!-- Styles -->
+        <link href="assets/style.css" type="text/css" rel="stylesheet">
+        <link href="assets/buttons.css" type="text/css" rel="stylesheet">
+        <!-- Bootstrap -->
+        <link href="assets/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+        <!-- Font awesome -->
+        <link href="assets/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+        <!-- jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    </head>
+<body>
+    <div class="main-wrapper">
+        <!-- navbar -->
+        <nav class="navbar navbar-default" role="navigation" id="top">
+          <div class="nav-container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="index.php"><img src="img/logo.gif" id="logo"></img></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="http://tratamentnaturist.epizy.com" target="_blank">Demo website 1</a></li>
+                <li><a href="http://mydemo2.epizy.com" target="_blank">Demo website 2</a></li>
+                <li><a href="http://mydemo1.epizy.com" target="_blank">Demo website 3</a></li>
+                <li><a href="http://admin-panel.epizy.com" target="_blank">Demo Admin</a></li>
+                <li><a href="http://tickets-demo.epizy.com" target="_blank">Demo Tickets</a></li>
+                <li><a href="http://email-demo.epizy.com" target="_blank">Demo E-mail</a></li>
+                <li><a onclick="document.getElementById('id01').style.display='block'" href="#">LOG IN</A></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+            <!-- Change color theme -->
+            <div id="change_theme" class="col-lg-4 col-md-4 col-sm-3 col-xs-12">
+            	<a href="#">Change color theme <span id="change_icon" class="glyphicon glyphicon-arrow-down"></span></a>
+	            <div id="color_themes">
+	            	<div id="style_grey"><a href="#">Grey</a></div>
+	            	<div id="style_blue"><a href="#">Blue</a></div>
+	            	<div id="style_red"><a href="#">Red</a></div>
+	            	<div id="style_green"><a href="#">Green</a></div>
+	            </div>
+	        </div>
+	        <!-- End change color theme -->
+          </div><!-- /.nav-container-fluid -->
+        </nav><!-- end navbar -->
+        <!-- Open Login Modal -->
+        <div id="id01" class="modal">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">Close</span>
+        <!-- Modal Content -->
+        <form class="modal-content animate" action="login.php" method="POST" id="login" role="form" data-toggle="validator">
+         <!-- confirmation/error message -->
+        <?php if(isset($smsg)){ ?><div class="alert alert-success alert-dismissable container-fluid col-lg-8 col-lg-offset-2 col-md-12 col-sm-12 col-xs-12" role="alert"><b><?php echo $smsg; ?></b>
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        </div><?php } ?>
+        <?php if(isset($fmsg)){ ?><div class="alert alert-danger alert-dismissable container-fluid col-lg-8 col-lg-offset-2 col-md-12 col-sm-12 col-xs-12" role="alert"><b><?php echo $fmsg; ?></b>
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        </div><?php } ?><!-- end confirmation/error message -->
+            <div class="img_container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h4>Create a new account</h4>
+              <img src="img/img_avatar2.png" alt="Avatar" class="avatar">
+            </div>
+            <div class="container-fluid col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+              <div class="form-group">
+                <label><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="username" id="username" class="form-control"  required>
+                <div class="help-block with-errors"></div>
+              </div>
+              <div class="form-group">
+                <label><b>E-mail</b></label>
+                <input type="email" placeholder="Enter e-mail" name="email" id="email" class="form-control" required>
+                <div class="help-block with-errors"></div>
+              </div>
+              <div class="form-group">
+                <label><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="password" id="password" class="form-control" data-minlength="5" required>
+                <div class="help-block">Minimum 5 characters</div>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="login_btn btn btn-success gradient pull-right" name="submit" id="submit" value="login">Login</button>
+                <button type="button" class="cancel_btn btn btn-danger gradient" onclick="document.getElementById('id01').style.display='none'">Cancel</button>
+              </div>
+              <div class="form-group">
+                <span><input type="checkbox" checked="checked"> Remember me</span>
+                <span class="pwd">Forgot <a href="#">password?</a></span>
+              </div>
+              <div><h4 class="register_link">Don't have an account? Click <a href="register.php">HERE</a> to create one!</h4></div>
+            </div>
+        </form>
+        </div><!-- end Login modal -->
+        <div class="bg-overlay"><!-- start bg-overlay -->
+            <div class="overlay-content animation-element slide-left introduction">
+                    <h1 class="h-large">Created<br>for creatives</h1>
+                    <h4 class="h-subheading">Multipage & one-page HTML5 websites
+	                    <br>
+	                    Website development portofolio
+                    </h4>
+                    <a href="http://tratamentnaturist.epizy.com" target="_blank" class="btn btn-overlay">See more >></a>
+            </div>
+            <div class="scroll">
+                <a href="#intro">
+                    <span id="scroll-text">move down</span>
+                    <br>
+                    <span id="scroll-icon" class="glyphicon glyphicon-circle-arrow-down"></span>
+                </a>
+            </div>
+        </div><!-- end bg-overlay -->
+        <div class="clearfix"></div>
+        <div class="spacing-1"></div>
+        <div id="intro" class="col-md-offset-2 col-md-8 text-center">
+            <h3 class="b-title">WELCOME TO DEMO WEBSITE!</h3>
+            <h4 class="g-txt">CREATIVE MULTIPURPOSE ONE/MULTI PAGE WEBSITES
+	            <br>
+	            Website development portofolio
+            </h4>
+            <br>
+            <p class="g-txt-par">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
+        </div>
+        <div id="presentation" class="col-lg-offset-1 col-lg-10 col-md-offset-1 col-md-10">
+        <img src="img/presentation.png" id="hide_me">
+        </div>
+        <div class="clearfix"></div>
+        <div class="grey_bg">
+            <div id="what_we_do" class="col-md-12">
+                <div class="sec-header col-md-offset-2 col-md-8 text-center">
+                    <h3 class="b-title">What we do</h3>
+                    <h4 class="g-txt">Lorem ipsum dolor sit amet consectetur</h4>
+                </div>
+                <div class="row col-lg-12 boxes">
+                    <div class="col-lg-4 col-md-4 col-sm-3 col-xs-12 animation-element slide-top" id="box_1">
+                    <a href="#">
+                        <div class="box_image"><span class="glyphicon glyphicon-camera"></span></div>
+                        <div class="box_title">Lorem ipsum</div>
+                        <div class="box_content">Lorem ipsum dolor sit amet, consectetur elit adipisicing , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minimv</div>
+                        <div class="box_link pull-right"><a>Learn more <span class="glyphicon glyphicon-arrow-right"></span></a></div>
+                    </a>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-3 col-xs-12 animation-element slide-bottom" id="box_2">
+                    <a href="#">
+                        <div class="box_image"><span class="glyphicon glyphicon-globe"></span></div>
+                        <div class="box_title">Lorem ipsum</div>
+                        <div class="box_content">Lorem ipsum dolor sit amet, consectetur elit adipisicing , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minimv</div>
+                        <div class="box_link pull-right"><a>Learn more <span class="glyphicon glyphicon-arrow-right"></span></a></div>
+                    </a>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-3 col-xs-12 animation-element slide-top" id="box_3">
+                    <a href="#">
+                        <div class="box_image"><span class="glyphicon glyphicon-star-empty"></span></div>
+                        <div class="box_title">Lorem ipsum</div>
+                        <div class="box_content">Lorem ipsum dolor sit amet, consectetur elit adipisicing , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minimv</div>
+                        <div class="box_link pull-right"><a>Learn more <span class="glyphicon glyphicon-arrow-right"></span></a></div>
+                    </a>
+                    </div>
+                </div><!-- end boxes -->
+            </div>
+        </div><!-- end grey_bg -->
+        <div class="clearfix"></div>
+        <div id="banner_section" class="col-lg-12 text-center">
+            <div class="section_overlay">
+                <div class="big_icon col-lg-3 col-md-3 col-sm-3 col-xs-6"><img id="icon1" src="img/icon1.png"><p class="sec_text">Web development</p></div>
+                <div class="big_icon col-lg-3 col-md-3 col-sm-3 col-xs-6"><img id="icon2" src="img/icon2.png"><p class="sec_text">Web design</p></div>
+                <div class="big_icon col-lg-3 col-md-3 col-sm-3 col-xs-6"><img id="icon3" src="img/icon3.png"><p class="sec_text">Photography</p></div>
+                <div class="big_icon big_icon_last col-lg-3 col-md-3 col-sm-3 col-xs-6"><img id="icon4" src="img/icon4.png"><p class="sec_text">Marketing</p></div>
+            </div>
+        </div><!-- end banner_section -->
+        <div class="clearfix"></div>
+        <div id="mobile_friendly" class="col-lg-12">
+            <div class="sec-header col-md-offset-2 col-md-8 text-center">
+                <h3 class="b-title">Mobile friendly</h3>
+                <h4 class="g-txt">Created to work on all mobile devices</h4>
+            </div>
+            <div class="row col-lg-12 mobile_info">
+                <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12" id="mobile_info_left">
+                    <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12">
+                        <div class="mobile_title left">Easily Adjust</div>
+                        <div class="mobile_content left">Lorem ipsum dolor sit amet, ete elit consectetur adipisicing. Omnis quae, ipsam impedit eius. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-2 col-xs-2">
+                        <img src="img/i_left1.svg" id="mobile_hide">
+                    </div>
+                    <br>
+                    <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12">
+                        <div class="mobile_title left">Responsive design</div>
+                        <div class="mobile_content left">Lorem ipsum dolor sit amet, ete elit consectetur adipisicing. Omnis quae, ipsam impedit eius. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-2 col-xs-2">
+                        <img src="img/i_left2.svg" id="mobile_hide">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <img id="mobile_responsive" src="img/responsive_ipad.png"></div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" id="mobile_info_right">
+                    <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12">
+                        <div class="mobile_title right">Modular Design</div>
+                        <div class="mobile_content right">Lorem ipsum dolor sit amet, ete elit consectetur adipisicing. Omnis quae, ipsam impedit eius, vero. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-2 col-xs-2">
+                        <img src="img/i_right1.svg" id="mobile_hide">
+                    </div>
+                    <br>
+                    <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12">
+                        <div class="mobile_title right">Mobile friendly</div>
+                        <div class="mobile_content right">Lorem ipsum dolor sit amet, ete elit consectetur adipisicing. Omnis quae, ipsam impedit eius, vero. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-2 col-xs-2">
+                        <img src="img/i_right2.svg" id="mobile_hide">
+                    </div>
+                </div>
+            </div>
+        </div><!-- end mobile_friendly -->
+        <div class="clearfix"></div>
+        <div id="banner_section2" class="col-lg-12 text-center">
+            <div class="section_overlay2 container-fluid">
+                <div class="big_icon2 col-lg-3 col-md-3 col-sm-3 col-xs-6"><span class="sec_text2">467</span><p class="sec_text">PROJECTS COMPLETED</p></div>
+                <div class="big_icon2 col-lg-3 col-md-3 col-sm-3 col-xs-6"><span class="sec_text2">2,835</span><p class="sec_text">EMAILS SENT</p></div>
+                <div class="big_icon2 col-lg-3 col-md-3 col-sm-3 col-xs-6"><span class="sec_text2">46,930</span><p class="sec_text">PIXELS CREATED</p></div>
+                <div class="big_icon2 big_icon_last2 col-lg-3 col-md-3 col-sm-3 col-xs-6"><span class="sec_text2">102,890</span><p class="sec_text">HAPPY CLIENTS</p></div>
+            </div>
+        </div><!-- end banner_section2 -->
+        <div class="clearfix"></div>
+        <div class="footer col-lg-12">
+            <div class="container-fluid">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 about_us">
+                    <h5 class="footer_header"><i class="fa fa-book"></i> About us</h5>
+                    <p>Lorem ipsum dolor sit amet, eiusmod consectetur adipisicing elit, sed do tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 contact_us">
+                <h5 class="footer_header"><i class="fa fa-address-card"></i> Contact us</h5>
+                    <ul class="contact_list col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <li><i class="fa fa-map"></i> <span>Address:</span> 1200 some street, IL, US</li>
+                        <li><i class="fa fa-phone-square"></i> <span>Phone</span>
+                            <li>+ 123 4567 890</li>
+                            <li>+ 123 7654 098</li>
+                        </li>
+                    </ul>
+                    <ul class="contact_list col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <li><i class="fa fa-envelope"></i> <span>E-mail:</span> <a href="mailto:sayhello@email.com" class="a_social footer">sayhello@email.com</a></li>
+                        <li><i class="fa fa-clock-o"></i> <span>Open hours</span>
+                            <li>Mon-Fri: 9am-5pm</li>
+                            <li>Sat: 10am-1pm</li>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 social_media">
+                    <h5 class="footer_header"><i class="fa fa-globe"></i> Social media</h5>
+                    <div class="social_links col-lg-12">
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><a href="#" class="a_social"><i class="fa fa-facebook-square"></i></a></div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><a href="#" class="a_social"><i class="fa fa-twitter-square"></i></a></div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><a href="#" class="a_social"><i class="fa fa-linkedin-square"></i></a></div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><a href="#" class="a_social"><i class="fa fa-youtube-square"></i></a></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 newsletter">
+                <h5 class="footer_header"><i class="fa fa-newspaper-o"></i> Newsletter</h5>
+                    <form>
+                        <div class="form-group">
+                            <span><input type="email" placeholder="Join our newsletter" name="email" class="form-control" id="subscribe_form">
+                            <button type="submit" name="subscribe" id="subscribe_btn" class="btn btn-default"><i class="fa fa-send-o"></i></button></span>
+                      </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-12 copyright container-fluid">
+                <small>© 2017 Demo website. Made by Madalina Rosca</small>
+            </div>
+        </div>
+        <div id="scroll_to_top" data-toggle="tooltip" data-placement="left" title="Scroll to top"><a href="#top"><i class="fa fa-angle-double-up"></i></a></div><!-- scroll to top button -->
+    </div><!-- end main-wrapper -->
+</body>
+<script src="js/default.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+</html>
