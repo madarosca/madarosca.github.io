@@ -11,7 +11,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
         <!-- Styles -->
-        <link href="assets/style.css" type="text/css" rel="stylesheet">
+        <link href="assets/style_blue.css" type="text/css" rel="stylesheet">
         <link href="assets/buttons.css" type="text/css" rel="stylesheet">
         <!-- Bootstrap -->
         <link href="assets/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
